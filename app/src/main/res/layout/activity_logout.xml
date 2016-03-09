@@ -7,25 +7,26 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.loginfacebook.MainActivity">
+    tools:context="com.loginfacebook.LogoutActivity">
 
-    <TextView
-        android:text="Login with facebook"
-       android:id="@+id/btnLogin"
-        android:padding="16dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:id="@+id/profileImage"
+        android:background="@mipmap/ic_launcher"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout from Facebook"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnLogout"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:layout_below="@+id/profileImage"
         android:background="#494949"
         android:textColor="#fff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         />
 
-    <com.facebook.login.widget.LoginButton
-       android:visibility="gone"
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="30dp"
-        />
 </RelativeLayout>
