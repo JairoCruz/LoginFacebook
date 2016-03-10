@@ -11,10 +11,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- Agregar esta meta data con el valor de app id obtenido de haber registrado la app facebook -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
-
+        <!--  -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,13 +24,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--
+        Se agrega una actividad la cual se encargara de mostrar el login de facebook, no hace falta programar nada mas
+        que agregar estas propiedades a esta actividad
+        -->
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".LogoutActivity"
-            android:label="@string/app_name"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+        <!--  -->
+        <!-- Agregamos FacebookContentProvider con el fin de compartir el contenido de nuestra aplicacion -->
+        <provider
+            android:authorities="com.facebook.app.FacebookContentProvider185252735187623"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
+        <!--  -->
+        <activity
+            android:name=".LogoutActivity"
+            android:label="@string/app_name"></activity>
+        <activity android:name=".dialog_details"></activity>
     </application>
 
 </manifest>
